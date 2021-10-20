@@ -49,8 +49,8 @@ public class ServiciosCabin {
                 if(cabin.getBrand()!=null){
                     e.get().setBrand(cabin.getBrand());
                 }
-                if(cabin.getYear()!=null){
-                    e.get().setYear(cabin.getYear());
+                if(cabin.getRooms()!=null){
+                    e.get().setRooms(cabin.getRooms());
                 }
                 if(cabin.getDescription()!=null){
                     e.get().setDescription(cabin.getDescription());
