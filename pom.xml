@@ -8,7 +8,7 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Domingo_Reto3</groupId>
+	<groupId>G37_Reto3_Ok</groupId>
 	<artifactId>G37_Reto3_Ok</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>G37_Reto3_Ok</name>

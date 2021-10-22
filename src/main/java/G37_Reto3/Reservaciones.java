@@ -33,14 +33,14 @@ public class Reservaciones implements Serializable  {
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
-    private Cabin cabin;
+    private Cabaña cabin;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"reservations","messages"})
     private Cliente client;
 
-    private String score; //depende el grupo
+    private String score="None"; //depende el grupo
 
     public Integer getIdReservation() {
         return idReservation;
@@ -74,11 +74,11 @@ public class Reservaciones implements Serializable  {
         this.status = status;
     }
 
-    public Cabin getcabin() {
+    public Cabaña getCabin() {
         return cabin;
     }
 
-    public void setcabin(Cabin cabin) {
+    public void setcabin(Cabaña cabin) {
         this.cabin = cabin;
     }
 

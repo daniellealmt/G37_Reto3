@@ -18,19 +18,19 @@ public class ServiciosCabin {
      @Autowired
     private RepositorioCabin metodosCrud;
 
-    public List<Cabin> getAll(){
+    public List<Cabaña> getAll(){
         return metodosCrud.getAll();
     }
 
-    public Optional<Cabin> getcabin(int cabinId) {
-        return metodosCrud.getcabin(cabinId);
+    public Optional<Cabaña> getCabin(int cabinId) {
+        return metodosCrud.getCabin(cabinId);
     }
 
-    public Cabin save(Cabin cabin){
+    public Cabaña save(Cabaña cabin){
         if(cabin.getId()==null){
             return metodosCrud.save(cabin);
         }else{
-            Optional<Cabin> e=metodosCrud.getcabin(cabin.getId());
+            Optional<Cabaña> e=metodosCrud.getCabin(cabin.getId());
             if(e.isEmpty()){
                 return metodosCrud.save(cabin);
             }else{
@@ -39,9 +39,9 @@ public class ServiciosCabin {
         }
     }
 
-    public Cabin update(Cabin cabin){
+    public Cabaña update(Cabaña cabin){
         if(cabin.getId()!=null){
-            Optional<Cabin> e=metodosCrud.getcabin(cabin.getId());
+            Optional<Cabaña> e=metodosCrud.getCabin(cabin.getId());
             if(!e.isEmpty()){
                 if(cabin.getName()!=null){
                     e.get().setName(cabin.getName());
@@ -52,8 +52,8 @@ public class ServiciosCabin {
                 if(cabin.getRooms()!=null){
                     e.get().setRooms(cabin.getRooms());
                 }
-                if(cabin.getDescription()!=null){
-                    e.get().setDescription(cabin.getDescription());
+                if(cabin.getCategory()!=null){
+                    e.get().setCategory(cabin.getCategory());
                 }
                 if(cabin.getCategory()!=null){
                     e.get().setCategory(cabin.getCategory());
@@ -69,8 +69,8 @@ public class ServiciosCabin {
     }
 
 
-    public boolean deletecabin(int cabinId) {
-        Boolean aBoolean = getcabin(cabinId).map(cabin -> {
+    public boolean deleteCabin(int cabinId) {
+        Boolean aBoolean = getCabin(cabinId).map(cabin -> {
             metodosCrud.delete(cabin);
             return true;
         }).orElse(false);

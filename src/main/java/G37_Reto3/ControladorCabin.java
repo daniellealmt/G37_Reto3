@@ -30,30 +30,30 @@ public class ControladorCabin {
     @Autowired
     private ServiciosCabin servicio;
     @GetMapping("/all")
-    public List<Cabin> getcabins(){
+    public List<Cabaña> getCabins(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Cabin> getcabin(@PathVariable("id") int cabinId) {
-        return servicio.getcabin(cabinId);
+    public Optional<Cabaña> getCabin(@PathVariable("id") int cabinId) {
+        return servicio.getCabin(cabinId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cabin save(@RequestBody Cabin cabin) {
+    public Cabaña save(@RequestBody Cabaña cabin) {
         return servicio.save(cabin);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cabin update(@RequestBody Cabin cabin) {
+    public Cabaña update(@RequestBody Cabaña cabin) {
         return servicio.update(cabin);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int cabinId) {
-        return servicio.deletecabin(cabinId);
+        return servicio.deleteCabin(cabinId);
     }
     
 }

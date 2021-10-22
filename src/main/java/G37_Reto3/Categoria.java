@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author DANIEL LEAL
  */
 @Entity
-@Table(name = "category")
+@Table(name = "category_id")
 
 public class Categoria implements Serializable {
     @Id
@@ -28,8 +28,8 @@ public class Categoria implements Serializable {
     private String description;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
-    @JsonIgnoreProperties("category")
-    private List<Cabin> cabin;
+    @JsonIgnoreProperties("category_id")
+    private List<Cabaña> cabins;
 
     public Integer getId() {
         return id;
@@ -55,15 +55,14 @@ public class Categoria implements Serializable {
         this.description = description;
     }
 
-    public List<Cabin> getcabin() {
-        return cabin;
+    public List<Cabaña> getCabins() {
+        return cabins;
     }
 
-    public void setcabin(List<Cabin> cabin) {
-        this.cabin = cabin;
+    public void setCabins(List<Cabaña> cabins) {
+        this.cabins = cabins;
     }
 
-    
-
+   
     
 }

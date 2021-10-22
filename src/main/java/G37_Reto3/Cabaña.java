@@ -18,23 +18,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cabin")
-public class Cabin implements Serializable{
+@Table(name = "cabins")
+public class Cabaña implements Serializable{
 
 @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String brand;
+    private String brand;     
     private Integer rooms;
     private String description;
+       
     
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("cabins")
     private Categoria category;
 
-     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "cabin")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "cabin")
     @JsonIgnoreProperties({"cabin", "client"})
     private List<Mensaje> messages;
 
@@ -48,14 +49,6 @@ public class Cabin implements Serializable{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getBrand() {
@@ -74,12 +67,12 @@ public class Cabin implements Serializable{
         this.rooms = rooms;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Categoria getCategory() {
@@ -106,5 +99,14 @@ public class Cabin implements Serializable{
         this.reservations = reservations;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+  
     
 }

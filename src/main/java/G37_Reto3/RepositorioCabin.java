@@ -19,18 +19,18 @@ public class RepositorioCabin {
     @Autowired
     private InterfaceCabin crud;
 
-    public List<Cabin> getAll(){
-        return (List<Cabin>) crud.findAll();
+    public List<Cabaña> getAll(){
+        return (List<Cabaña>) crud.findAll();
     }
 
-    public Optional<Cabin> getcabin(int id){
+    public Optional<Cabaña> getCabin(int id){
         return crud.findById(id);
     }
 
-    public Cabin save(Cabin cabin){
+    public Cabaña save(Cabaña cabin){
         return crud.save(cabin);
     }
-    public void delete(Cabin cabin){
+    public void delete(Cabaña cabin){
         crud.delete(cabin);
     }
     

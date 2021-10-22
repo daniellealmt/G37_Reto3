@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
  *
  * @author DLEAL
  */
-public interface InterfaceCabin extends CrudRepository<Cabin,Integer>
+public interface InterfaceCabin extends CrudRepository<Cabaña,Integer>
  {
     
 }
